@@ -11,7 +11,6 @@ const TransactionItem = props => {
 
   return (
     <div>
-      <hr />
       <li className="history-item">
         <p className="data">{title}</p>
         <p className="data">{amount}</p>
@@ -29,6 +28,7 @@ const TransactionItem = props => {
           />
         </button>
       </li>
+      <hr />
     </div>
   )
 }

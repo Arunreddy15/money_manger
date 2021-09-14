@@ -95,18 +95,27 @@ table {
 ul {
   padding: 0;
   border: 1px solid #7e858e;
+  margin: 0;
 }
 .heading-history {
   list-style: none;
   display: flex;
-
+  align-items: center;
+  background-color: #c9d0d8;
   /* justify-content: space-between; */
 }
 .table-heading {
-  height: 30px;
+  height: 35px;
   margin-left: 5px;
   width: 140px;
   color: #1e293b;
   font-size: 18px;
   font-weight: 600;
+  padding-top: 8px;
+}
+.history {
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  margin-top: 20px;
 }

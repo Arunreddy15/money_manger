@@ -70,12 +70,20 @@ class MoneyManager extends Component {
       historyData: [...prevState.historyData, newHistoryItem],
       inputTitle: '',
       inputAmount: '',
+      selectedOption: transactionTypeOptions[0].displayText,
     }))
     console.log(newHistoryItem)
   }
 
   render() {
-    const {historyData, income, expense, inputTitle, inputAmount} = this.state
+    const {
+      historyData,
+      income,
+      expense,
+      inputTitle,
+      inputAmount,
+      selectedOption,
+    } = this.state
     return (
       <div className="app-container">
         <div className="container">
@@ -91,31 +99,39 @@ class MoneyManager extends Component {
               <h1 className="form-head">Add Transaction</h1>
               <form className="form-box" onSubmit={this.onSubmitAdd}>
                 <div className="inputs-div">
-                  <label>TITLE</label>
+                  <label htmlFor="title">TITLE</label>
                   <br />
                   <input
                     type="text"
                     placeholder="TITLE"
                     onChange={this.onChangeTitle}
                     value={inputTitle}
+                    id="title"
                   />
                 </div>
                 <div className="inputs-div">
-                  <label>AMOUNT</label>
+                  <label htmlFor="amount">AMOUNT</label>
                   <br />
                   <input
                     type="text"
                     placeholder="AMOUNT"
                     onChange={this.onChangeAmount}
                     value={inputAmount}
+                    id="amount"
                   />
                 </div>
                 <div className="inputs-div">
-                  <label>TYPE</label>
+                  <label htmlFor="type">TYPE</label>
                   <br />
-                  <select onChange={this.onChangeOption}>
+                  <select
+                    id="type"
+                    value={selectedOption}
+                    onChange={this.onChangeOption}
+                  >
                     {transactionTypeOptions.map(each => (
-                      <option key={each.optionId}>{each.displayText}</option>
+                      <option key={each.optionId} selected>
+                        {each.displayText}
+                      </option>
                     ))}
                   </select>
                 </div>
